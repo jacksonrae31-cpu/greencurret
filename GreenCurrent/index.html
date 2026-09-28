@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenCurrent — Small Actions. Cleaner Currents.</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;color:#173b32;background:#f4fbf7;line-height:1.6}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #dcece4;padding:16px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:800;color:#176b4d}.logo span{color:#55a86d}
+nav a{margin-left:24px;text-decoration:none;color:#31564b;font-weight:600}
+.hero{padding:85px 7%;background:linear-gradient(135deg,#dff5e9,#eefaf5 55%,#d5edf2);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.badge{display:inline-block;background:#d0f0df;color:#176b4d;padding:7px 12px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin-bottom:20px}
+.hero p{font-size:19px;max-width:650px;color:#47665d}
+.buttons{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+.primary{background:#19734f;color:white}.secondary{background:white;color:#176b4d;border:1px solid #b9d9ca}
+.wave{background:#176b4d;color:white;border-radius:24px;padding:30px;box-shadow:0 18px 45px #176b4d25}
+.wave h2{font-size:38px}.wave strong{font-size:52px;display:block;margin:5px 0}
+section{padding:70px 7%}.section-title{font-size:38px;margin-bottom:12px}.muted{color:#5d766e}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.card{background:white;border:1px solid #dcece4;border-radius:18px;padding:25px;box-shadow:0 8px 25px #173b3209}
+.card h3{margin-bottom:7px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.num{width:42px;height:42px;border-radius:50%;background:#d8f1e2;color:#176b4d;display:grid;place-items:center;font-weight:900;margin-bottom:15px}
+.impact{background:#103f32;color:white}
+.impact .muted{color:#d0e8df}
+.impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.progress{height:18px;background:#315f52;border-radius:20px;overflow:hidden;margin:18px 0}
+.progress div{height:100%;background:#78d394;width:63%}
+.login{max-width:500px;margin:0 auto}
+label{display:block;margin-top:15px;font-weight:700}
+input{width:100%;padding:13px;border:1px solid #bdd7cb;border-radius:9px;margin-top:6px;font-size:16px}
+.notice{background:#fff8df;border:1px solid #ead69a;padding:12px;border-radius:10px;margin-bottom:18px;color:#675520;font-size:14px}
+footer{background:#092b23;color:#d8ebe4;padding:35px 7%;text-align:center}
+#message{margin-top:14px;font-weight:700}
+@media(max-width:800px){.hero,.impact-grid{grid-template-columns:1fr}.stats,.steps{grid-template-columns:1fr}nav{padding:14px 5%}nav a{margin-left:10px;font-size:14px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Green<span>Current</span> 🌱</div>
+  <div>
+    <a href="#mission">Mission</a><a href="#impact">Impact</a><a href="#login">Login</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="badge">CLIMATE ACTION • CLEAN WATER • COMMUNITY</div>
+    <h1>Cleaner rivers. Safer communities.</h1>
+    <p>GreenCurrent is a student project concept showing how community donations could support river cleanups, flood-prevention projects, and climate education.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#donate">Make a Demo Donation</a>
+      <a class="btn secondary" href="#mission">See How It Works</a>
+    </div>
+  </div>
+  <div class="wave">
+    <div>COMMUNITY IMPACT</div>
+    <strong id="trashCount">12,480</strong>
+    <div>demo units of trash removed</div>
+    <hr style="border:0;border-top:1px solid #ffffff40;margin:22px 0">
+    <div>Every donation in this school-project demo adds another cleanup unit to the counter.</div>
+  </div>
+</header>
+
+<section id="mission">
+  <h2 class="section-title">Why GreenCurrent?</h2>
+  <p class="muted">Flooding can become more damaging when waterways are blocked by litter and communities lack resilient infrastructure. Our concept combines cleanup work with climate awareness.</p>
+  <div class="stats">
+    <div class="card"><h3>🌊 Cleaner waterways</h3><p>Support community cleanup efforts that keep litter out of streams and rivers.</p></div>
+    <div class="card"><h3>🏘️ Resilient communities</h3><p>Highlight projects that improve awareness and preparedness around flooding.</p></div>
+    <div class="card"><h3>📚 Climate education</h3><p>Make climate information easier for students and families to understand.</p></div>
+  </div>
+</section>
+
+<section id="impact" class="impact">
+  <div class="impact-grid">
+    <div>
+      <h2 class="section-title">See the demo impact grow.</h2>
+      <p class="muted">This counter is interactive and exists only for the assignment demonstration. It does not process real money or represent verified environmental results.</p>
+    </div>
+    <div class="card" style="color:#173b32">
+      <h3>Cleanup progress</h3>
+      <div class="progress"><div></div></div>
+      <p><b>63%</b> of our fictional community goal</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">How it works</h2>
+  <div class="steps">
+    <div class="card"><div class="num">1</div><h3>Choose an amount</h3><p>Pick a fictional donation amount for the classroom demonstration.</p></div>
+    <div class="card"><div class="num">2</div><h3>Track the counter</h3><p>The website adds a demo cleanup unit to the public impact counter.</p></div>
+    <div class="card"><div class="num">3</div><h3>Share the idea</h3><p>Use the project to discuss realistic ways communities can reduce flood risks.</p></div>
+  </div>
+</section>
+
+<section id="donate">
+  <div class="card" style="max-width:760px;margin:auto;text-align:center">
+    <h2 class="section-title">Make a demo donation</h2>
+    <p class="muted">No payment is collected. This button only changes the demonstration counter.</p>
+    <div class="buttons" style="justify-content:center">
+      <button class="btn primary" onclick="donate(1)">$5 Demo</button>
+      <button class="btn primary" onclick="donate(5)">$10 Demo</button>
+      <button class="btn primary" onclick="donate(10)">$25 Demo</button>
+    </div>
+    <div id="message"></div>
+  </div>
+</section>
+
+<section id="login">
+  <div class="card login">
+    <h2 class="section-title">Demo Login</h2>
+    <div class="notice">School-project demo only. Do not enter real passwords or personal information.</div>
+    <label>Demo username</label>
+    <input id="user" placeholder="example_student">
+    <label>Demo password</label>
+    <input id="pass" type="password" placeholder="demo-password">
+    <button class="btn primary" style="margin-top:18px;width:100%" onclick="login()">Log in to demo</button>
+    <div id="loginMessage"></div>
+  </div>
+</section>
+
+<footer>
+  <b>GreenCurrent</b><br>
+  A fictional climate-action website created for an educational project.<br>
+  No real donations, accounts, environmental claims, or payments are processed.
+</footer>
+
+<script>
+let count = 12480;
+function donate(units){
+  count += units;
+  document.getElementById("trashCount").textContent = count.toLocaleString();
+  document.getElementById("message").textContent = "Demo donation recorded! +" + units + " cleanup unit" + (units===1?"":"s") + ".";
+}
+function login(){
+  const u=document.getElementById("user").value.trim();
+  if(!u){document.getElementById("loginMessage").textContent="Please enter a demo username.";return;}
+  document.getElementById("loginMessage").textContent="Demo login successful — welcome, "+u+"!";
+}
+</script>
+</body>
+</html>
