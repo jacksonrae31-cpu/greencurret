@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenCurret - Donate</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef8f0;
+      color: #17351f;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+    }
+
+    .demo {
+      text-align: center;
+      background: #fff3cd;
+      color: #765c00;
+      padding: 12px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .amounts {
+      display: flex;
+      gap: 10px;
+    }
+
+    .amount {
+      flex: 1;
+      padding: 13px;
+      border: 2px solid #35a853;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .amount.selected {
+      background: #35a853;
+      color: white;
+    }
+
+    .donate-btn,
+    .leave-btn {
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      border: none;
+      border-radius: 9px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .donate-btn {
+      background: #16833b;
+    }
+
+    .leave-btn {
+      background: #222;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      color: #16833b;
+      text-decoration: none;
+    }
+
+    #success {
+      display: none;
+      text-align: center;
+    }
+
+    .joke {
+      font-size: 42px;
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    #virusScreen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #111;
+      color: white;
+      z-index: 9999;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 12vh;
+    }
+
+    .virusWarning {
+      font-size: 55px;
+      font-weight: 900;
+      animation: warningFlash 0.5s infinite alternate;
+    }
+
+    .fakeWarning {
+      position: relative;
+      z-index: 5;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
+    .fakeVirus {
+      position: absolute;
+      font-size: 70px;
+      animation: virusFloat 4s linear infinite;
+    }
+
+    @keyframes warningFlash {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes virusFloat {
+      0% {
+        transform: translate(0, 100vh) rotate(0deg);
+      }
+
+      50% {
+        transform: translate(40vw, 30vh) rotate(180deg);
+      }
+
+      100% {
+        transform: translate(90vw, -20vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAYMENT PAGE -->
+
+  <div class="container" id="paymentBox">
+
+    <h1>🌱 GreenCurret</h1>
+
+    <p class="subtitle">
+      Make a Demo Donation
+    </p>
+
+    <div class="demo">
+      DEMO PAYMENT — NO REAL MONEY IS PROCESSED
+    </div>
+
+    <label>Choose donation amount</label>
+
+    <div class="amounts">
+
+      <button class="amount selected"
+        onclick="chooseAmount(5, this)">
+        $5
+      </button>
+
+      <button class="amount"
+        onclick="chooseAmount(10, this)">
+        $10
+      </button>
+
+      <button class="amount"
+        onclick="chooseAmount(25, this)">
+        $25
+      </button>
+
+    </div>
+
+    <label>Cardholder name</label>
+
+    <input
+      id="name"
+      type="text"
+      placeholder="Demo User"
+    >
+
+    <label>Demo card number</label>
+
+    <input
+      id="card"
+      type="text"
+      maxlength="19"
+      placeholder="0000 0000 0000 0000"
+    >
+
+    <label>Expiry date</label>
+
+    <input
+      id="expiry"
+      type="text"
+      maxlength="5"
+      placeholder="12/30"
+    >
+
+    <label>CVC</label>
+
+    <input
+      id="cvc"
+      type="text"
+      maxlength="3"
+      placeholder="000"
+    >
+
+    <button
+      class="donate-btn"
+      onclick="makeDonation()">
+      Continue
+    </button>
+
+    <a class="back" href="index.html">
+      ← Back to GreenCurret
+    </a>
+
+  </div>
+
+
+  <!-- JOKE SCREEN -->
+
+  <div class="container" id="success">
+
+    <div style="font-size:55px;">
+      🐔
+    </div>
+
+    <h1 class="joke">
+
+      EZ LOL COPE<br>
+      GET GOOD<br>
+      SKILL ISSUE<br>
+      GET SCAMMED<br>
+      CHIMKIN EZ<br>
+      IMAGINE GETTING SCAMMED 💀
+
+    </h1>
+
+    <p class="demo">
+
+      😂 GOTCHA! THIS WAS ONLY A DEMO.<br>
+      NO REAL PAYMENT WAS PROCESSED.
+
+    </p>
+
+    <button
+      class="leave-btn"
+      onclick="showVirus()">
+
+      LEAVE
+
+    </button>
+
+  </div>
+
+
+  <!-- FAKE VIRUS SCREEN -->
+
+  <div id="virusScreen">
+
+    <div class="virusWarning">
+      ⚠️ YOU HAVE A VIRUS ⚠️
+    </div>
+
+    <div id="virusContainer"></div>
+
+    <p class="fakeWarning">
+
+      JUST KIDDING 😂<br>
+      THIS IS A FAKE VIRUS SCREEN.
+
+    </p>
+
+    <button
+      class="leave-btn"
+      onclick="hideVirus()">
+
+      Return to GreenCurret
+
+    </button>
+
+  </div>
+
+
+  <script>
+
+    let selectedAmount = 5;
+
+
+    function chooseAmount(amount, button) {
+
+      selectedAmount = amount;
+
+      document
+        .querySelectorAll(".amount")
+        .forEach(btn => {
+          btn.classList.remove("selected");
+        });
+
+      button.classList.add("selected");
+    }
+
+
+    function makeDonation() {
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const card =
+        document.getElementById("card").value.trim();
+
+      const expiry =
+        document.getElementById("expiry").value.trim();
+
+      const cvc =
+        document.getElementById("cvc").value.trim();
+
+
+      if (!name || !card || !expiry || !cvc) {
+
+        alert("Please fill in all demo fields.");
+
+        return;
+      }
+
+
+      document.getElementById("paymentBox").style.display =
+        "none";
+
+      document.getElementById("success").style.display =
+        "block";
+    }
+
+
+    function showVirus() {
+
+      document.getElementById("virusScreen").style.display =
+        "block";
+
+      const container =
+        document.getElementById("virusContainer");
+
+      container.innerHTML = "";
+
+
+      for (let i = 0; i < 25; i++) {
+
+        const virus =
+          document.createElement("div");
+
+        virus.className = "fakeVirus";
+
+        virus.textContent = "🦠";
+
+        virus.style.left =
+          Math.random() * 100 + "%";
+
+        virus.style.top =
+          Math.random() * 100 + "%";
+
+        virus.style.animationDelay =
+          Math.random() * 3 + "s";
+
+        container.appendChild(virus);
+      }
+    }
+
+
+    function hideVirus() {
+
+      document.getElementById("virusScreen").style.display =
+        "none";
+    }
+
+  </script>
+
+</body>
+</html>
